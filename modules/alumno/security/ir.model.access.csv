@@ -1,0 +1,4 @@
+#le doy en permiso global a todos los usuarios
+
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_alumno_user,access_alumno_user,model_alumnos_alumnos,,1,1,1,1

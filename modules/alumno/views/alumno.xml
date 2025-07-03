@@ -1,0 +1,52 @@
+<odoo>
+    <record id="action_alumno" model="ir.actions.act_window">
+        <field name="name">Alumnos</field>
+        <field name="res_model">alumnos.alumnos</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="menu_alumno_root" name="Alumnos"/>
+
+    <menuitem id="menu_alumno" name="Gestionar Alumnos" parent="menu_alumno_root" action="action_alumno"/>
+
+    <record id="view_alumno_tree" model="ir.ui.view">
+        <field name="name">alumnos.alumnos.tree</field>
+        <field name="model">alumnos.alumnos</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="apellido"/>
+                <field name="nro_legajo"/>
+                <field name="email"/>
+                <field name="telefono"/>
+                <field name="pais_id"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_alumno_form" model="ir.ui.view">
+        <field name="name">alumnos.alumnos.form</field>
+        <field name="model">alumnos.alumnos</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <h1>Información del Alumno</h1>
+                </header>
+                <sheet>
+                    <group string="Datos Personales">
+                        <field name="name"/>
+                        <field name="apellido"/>
+                        <field name="fecha_nacimiento" options="{'datepicker': true}"/>
+                        <field name="nro_legajo"/>
+                    </group>
+                    <group string="Contacto">
+                        <field name="email" widget="email"/>
+                        <field name="telefono" widget="phone"/>
+                        <field name="direccion"/>
+                        <field name="pais_id" widget="many2one_avatar_user"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+</odoo>

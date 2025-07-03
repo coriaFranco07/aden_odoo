@@ -1,0 +1,37 @@
+<odoo>
+    <record id="action_inscripcion" model="ir.actions.act_window">
+        <field name="name">Inscripciones</field>
+        <field name="res_model">inscripcion.inscripcion</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="menu_inscripcion_root" name="Inscripciones"/>
+
+    <menuitem id="menu_inscripcion" name="Gestionar Inscripciones" parent="menu_inscripcion_root" action="action_inscripcion"/>
+
+    <record id="view_inscripcion_tree" model="ir.ui.view">
+        <field name="name">inscripcion.inscripcion.tree</field>
+        <field name="model">inscripcion.inscripcion</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="alumno_id"/>
+                <field name="programa_id"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_inscripcion_form" model="ir.ui.view">
+        <field name="name">inscripcion.inscripcion.form</field>
+        <field name="model">inscripcion.inscripcion</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="alumno_id"/>
+                        <field name="programa_id"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+</odoo>
