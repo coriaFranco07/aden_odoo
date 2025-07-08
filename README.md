@@ -1,10 +1,11 @@
 #  Comandos para levantar el proyecto
 
+0. `git clone --depth 1 --branch 17.0 https://github.com/odoo/odoo.git`
 1. `py -3.10 -m venv venv`
 2. `venv\Scripts\activate`
 3. `pip install setuptools wheel`
 4. `pip install -r requirements.txt`
-5. `python odoo-bin -r odoo -w odoo --addons-path=addons,modules -d odoo17`
+5. `python odoo/odoo-bin -r odoo -w odoo --addons-path=odoo/addons,modules -d odoo17`
 
 ---
 
